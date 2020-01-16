@@ -1,1 +1,3 @@
-electron-headless
+# electron-headless
+
+Run electron in CI
