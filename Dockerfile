@@ -1,7 +1,5 @@
 FROM node:latest
 
-RUN node -v
-
 RUN apt-get update
 
 # Install dependencies for running electron
@@ -28,16 +26,5 @@ RUN apt-get install -y \
   gcc-multilib \
   g++-multilib
 
-# Include the local file to working directory
-# I keep node_modules here because it's faster than install inside the container.
-ADD . /app
-
-WORKDIR /app
-
-RUN ls
-
-# Need to rebuild because modules are installed from local
-RUN npm install && npm rebuild
-
 # "xvfb-run -a [mycommand]" so xvfb uses another display if 99 is in use.
-CMD Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0 && npm test
+CMD Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0
