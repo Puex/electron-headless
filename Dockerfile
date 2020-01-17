@@ -32,6 +32,8 @@ ADD . /app
 
 WORKDIR /app
 
+RUN ls
+
 # Need to rebuild because modules are installed from local
 RUN npm install && npm rebuild
 
