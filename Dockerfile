@@ -25,6 +25,3 @@ RUN apt-get install -y \
   libnss3-dev \
   gcc-multilib \
   g++-multilib
-
-# "xvfb-run -a [mycommand]" so xvfb uses another display if 99 is in use.
-# CMD Xvfb -ac -screen scrn 1280x2000x24 :9.0 & export DISPLAY=:9.0
