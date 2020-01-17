@@ -1,5 +1,7 @@
 FROM node:latest
 
+RUN node -v
+
 RUN apt-get update
 
 # Install dependencies for running electron
